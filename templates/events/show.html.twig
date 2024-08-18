@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Events
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between">
+      <h1 class="text-danger display-4">{{ event.eventName }}</h1> <div class="d-flex justify-content-center align-items-center">
+        <a class="btn btn-danger" href="{{ path('app_events_index') }}">back to list <i class="fa-solid fa-reply"></i></a>
+      </div>
+    </div>
+    <h5 class="text-muted">{{ event.eventType }}</h5>
+
+    <div class="row mt-4">
+      <div class="col-md-8">
+        <p>{{ event.eventDate ? event.eventDate|date('Y-m-d H:i:s') : 'Date not available' }}</p>
+        <p class="mt-3">{{ event.eventDescription }}.</p>
+      </div>
+
+      <div class="col-md-4">
+        <img src="images/{{ event.eventImage }}" class="img-fluid rounded" alt="Vienna State Opera" />
+      </div>
+    </div>
+
+    <hr />
+    <div class="row mt-5">
+      <div class="col-md-4 text-danger">
+        <h5><i class="fas fa-map-marker-alt"></i> {{ event.eventAddress }}</h5>
+      </div>
+      <!-- Fechas del Evento -->
+      <div class="col-md-4 text-danger">
+        <h5><i class="fas fa-calendar-alt"></i> Capacity:</h5>
+        <p>
+          {{ event.eventCapacity }} <i class="fa-solid fa-person"></i>
+        </p>
+      </div>
+
+      <div class="col-md-4 text-danger">
+        <h5><i class="fas fa-info-circle"></i> Tickets & Info</h5>
+        <p>
+          <i class="fas fa-phone"></i><a href="tel:{{ event.eventPhone }}">{{ event.eventPhone }}</a><br />
+          <a href="{{ event.eventUrl }}" target="_blank" class="text-danger">{{ event.eventUrl }}</a><br />
+          <a href="#" class="text-danger">Tickets</a>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

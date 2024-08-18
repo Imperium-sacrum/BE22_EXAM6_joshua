@@ -1,0 +1,144 @@
+<style>
+  .card-img-top {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .ribbon {
+    position: absolute;
+    top: 80px;
+    left: -10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 15px;
+    transform: rotate(-45deg);
+    transform-origin: left top;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .card-title {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    color: #e74c3c;
+  }
+</style>
+
+<header>
+  <div class="bg-danger text-white py-2">
+    <div class="container d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <span class="me-3">Follow us on</span>
+        <div class="d-flex">
+          <a href="" class="text-white me-2"><i class="fa-brands fa-instagram"></i></a>
+          <a href="" class="text-white me-2"><i class="fa-brands fa-facebook"></i></a>
+          <a href="" class="text-white me-2"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="" class="text-white me-2"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="" class="text-white me-2"><i class="fa-brands fa-youtube"></i></a>
+          <a href="" class="text-white"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div>
+        <a href="" class="text-white me-3">B2B Services</a>
+        <a href="#" class="text-white me-3">English</a>
+        <a href="#" class="text-white">Sign language</a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand text-danger" href="{{ path('app_events_index') }}">
+        <h1 class="mb-0">VIENNA</h1>
+        <small>NOW & FOREVER</small>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_events_index') }}">Now on in Vienna</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_events_index') }}">See & Do</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_events_index') }}">Art & Culture</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_events_index') }}">Dine & Drink</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_events_index') }}">Livable Vienna</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_events_index') }}">Sleep & Stay</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero text-center text-white d-flex align-items-center justify-content-center" style="background-image: url('https://wien.info/resource/image/291886/Hero-Header/2457/910/de1d41a0c06aa743aaa8acd87c7bf0ca/5976590D7A38C92F5E3E3B28800AD0D6/50757-wiener-konzerthaus-musik-symphoniker-konzertsaal-klassik.webp');">
+    <div class="container">
+      <h2 class="display-4">Events in Vienna</h2>
+      <div class="input-group mt-4 mx-auto" style="max-width: 600px;">
+        <input type="text" class="form-control" placeholder="Search for Events & Locations" />
+        <button class="btn btn-danger" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="event-program py-5 bg-light">
+    <div class="container text-center">
+      <h3 class="text-danger">Event program</h3>
+      <div class="">
+        <form class="mt-4">
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-3">
+              <label for="from" class="form-label">From</label>
+              <input type="date" id="from" name="from" class="form-control" />
+            </div>
+            <div class="col-md-3">
+              <label for="to" class="form-label">To</label>
+              <input type="date" id="to" name="to" class="form-control" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <select id="type" name="type" class="form-select w-50 mx-auto">
+              <option value="all">All</option>
+              <!-- Otras opciones -->
+            </select>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" id="all-events" name="filter" value="all-events" checked />
+            <label class="form-check-label" for="all-events">All Events</label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" id="family" name="filter" value="family" />
+            <label class="form-check-label" for="family">Family</label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" id="vienna City Card Discount" name="filter" value="vienna City Card Discount" />
+            <label class="form-check-label" for="vienna City Card Discount">vienna City Card Discount</label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" id="Around Vienna" name="filter" value="Around Vienna" />
+            <label class="form-check-label" for="Around Vienna">Around Vienna</label>
+          </div>
+          <div class="form-check mb-3">
+            -<input class="form-check-input" type="radio" id="Johann Strauss 2025" name="filter" value="Johann Strauss 2025" />
+            <label class="form-check-label" for="Johann Strauss 2025">Johann Strauss 2025</label>
+          </div>
+          <!-- Otros filtros -->
+          <button type="submit" class="btn btn-danger">SHOW EVENTS</button>
+        </form>
+      </div>
+      <a href="{{ path('app_events_index') }}" class="d-block mt-4 text-danger">Event program June-August 2024</a>
+    </div>
+  </section>
+</main>
